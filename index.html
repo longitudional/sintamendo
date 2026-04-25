@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Parfum & Botol</title>
+    <title>Kalkulator Parfum Sinta Mendo</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 450px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 450px; margin-bottom: 20px; }
         h2 { text-align: center; color: #1a73e8; margin-bottom: 20px; font-size: 22px; }
         .section-title { font-size: 14px; color: #666; text-transform: uppercase; margin-bottom: 10px; border-bottom: 2px solid #1a73e8; display: inline-block; }
         .input-group { margin-bottom: 12px; padding-bottom: 8px; }
@@ -14,99 +14,98 @@
         .label-text { flex: 1; font-weight: 600; color: #444; }
         .input-wrapper { width: 130px; }
         input { width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px; text-align: center; font-size: 16px; box-sizing: border-box; }
-        input:focus { border-color: #1a73e8; outline: none; }
-        .subtotal { text-align: right; font-size: 13px; color: #888; margin-top: 4px; }
         .botol-section { background-color: #fdfdfd; padding: 15px; border: 1px dashed #ccc; border-radius: 10px; margin-top: 10px; }
         .total-container { margin-top: 20px; padding: 20px; background-color: #1a73e8; border-radius: 10px; color: white; text-align: center; }
-        .total-label { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
         .total-harga { font-size: 28px; font-weight: bold; }
-        .reset-btn { width: 100%; margin-top: 15px; padding: 12px; background: none; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #666; font-weight: bold; }
-        .reset-btn:hover { background-color: #eee; }
+        
+        /* Style untuk Counter */
+        .stats-card { background: #333; color: #fff; padding: 15px; border-radius: 12px; width: 100%; max-width: 450px; display: flex; justify-content: space-around; font-size: 13px; }
+        .stat-item { text-align: center; }
+        .stat-value { display: block; font-size: 18px; font-weight: bold; color: #4fc3f7; }
+        .reset-btn { width: 100%; margin-top: 15px; padding: 12px; background: none; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #666; }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <h2>Kasir Parfum Bibit Sintha Mendho</h2>
+    <h2>Kasir Parfum Bibit</h2>
 
     <span class="section-title">Input Bibit (ml)</span>
     
-    <div class="input-group">
-        <div class="row">
-            <span class="label-text">Bibit Rp 1.500</span>
-            <div class="input-wrapper">
-                <input type="number" class="qty" data-price="1500" placeholder="0 ml" oninput="hitungTotal()">
-            </div>
-        </div>
-        <div class="subtotal" id="sub-1500">Rp 0</div>
-    </div>
-
-    <div class="input-group">
-        <div class="row">
-            <span class="label-text">Bibit Rp 2.000</span>
-            <div class="input-wrapper">
-                <input type="number" class="qty" data-price="2000" placeholder="0 ml" oninput="hitungTotal()">
-            </div>
-        </div>
-        <div class="subtotal" id="sub-2000">Rp 0</div>
-    </div>
-
-    <div class="input-group">
-        <div class="row">
-            <span class="label-text">Bibit Rp 2.500</span>
-            <div class="input-wrapper">
-                <input type="number" class="qty" data-price="2500" placeholder="0 ml" oninput="hitungTotal()">
-            </div>
-        </div>
-        <div class="subtotal" id="sub-2500">Rp 0</div>
-    </div>
-
-    <div class="input-group">
-        <div class="row">
-            <span class="label-text">Bibit Rp 3.000</span>
-            <div class="input-wrapper">
-                <input type="number" class="qty" data-price="3000" placeholder="0 ml" oninput="hitungTotal()">
-            </div>
-        </div>
-        <div class="subtotal" id="sub-3000">Rp 0</div>
-    </div>
+    <div class="input-group"><div class="row"><span class="label-text">Bibit Rp 1.500</span><div class="input-wrapper"><input type="number" class="qty" data-price="1500" placeholder="0" oninput="hitungTotal()"></div></div><div class="subtotal" id="sub-1500" style="text-align:right; font-size:12px; color:#888">Rp 0</div></div>
+    <div class="input-group"><div class="row"><span class="label-text">Bibit Rp 2.000</span><div class="input-wrapper"><input type="number" class="qty" data-price="2000" placeholder="0" oninput="hitungTotal()"></div></div><div class="subtotal" id="sub-2000" style="text-align:right; font-size:12px; color:#888">Rp 0</div></div>
+    <div class="input-group"><div class="row"><span class="label-text">Bibit Rp 2.500</span><div class="input-wrapper"><input type="number" class="qty" data-price="2500" placeholder="0" oninput="hitungTotal()"></div></div><div class="subtotal" id="sub-2500" style="text-align:right; font-size:12px; color:#888">Rp 0</div></div>
+    <div class="input-group"><div class="row"><span class="label-text">Bibit Rp 3.000</span><div class="input-wrapper"><input type="number" class="qty" data-price="3000" placeholder="0" oninput="hitungTotal()"></div></div><div class="subtotal" id="sub-3000" style="text-align:right; font-size:12px; color:#888">Rp 0</div></div>
 
     <div class="botol-section">
         <div class="row">
             <span class="label-text" style="color: #d93025;">Harga Botol</span>
-            <div class="input-wrapper">
-                <input type="number" id="harga-botol" placeholder="Rp 0" oninput="hitungTotal()">
-            </div>
+            <div class="input-wrapper"><input type="number" id="harga-botol" placeholder="Rp 0" oninput="hitungTotal()"></div>
         </div>
     </div>
 
     <div class="total-container">
-        <div class="total-label">Total Harus Bayar</div>
+        <div class="total-label" style="font-size: 12px;">TOTAL HARUS BAYAR</div>
         <div class="total-harga" id="grand-total">Rp 0</div>
     </div>
 
     <button class="reset-btn" onclick="resetForm()">Bersihkan Semua</button>
 </div>
 
+<div class="stats-card">
+    <div class="stat-item">
+        Hari Ini
+        <span class="stat-value" id="count-today">0</span>
+    </div>
+    <div class="stat-item">
+        Total Kunjungan
+        <span class="stat-value" id="count-total">0</span>
+    </div>
+</div>
+
 <script>
+    // FUNGSI COUNTER
+    function updateCounter() {
+        const today = new Date().toLocaleDateString('id-ID');
+        
+        // Ambil data lama
+        let totalVisits = localStorage.getItem('totalVisits') || 0;
+        let lastVisitDate = localStorage.getItem('lastVisitDate');
+        let todayVisits = localStorage.getItem('todayVisits') || 0;
+
+        // Cek apakah ini hari baru
+        if (lastVisitDate !== today) {
+            todayVisits = 1;
+            localStorage.setItem('lastVisitDate', today);
+        } else {
+            todayVisits = parseInt(todayVisits) + 1;
+        }
+
+        totalVisits = parseInt(totalVisits) + 1;
+
+        // Simpan kembali
+        localStorage.setItem('totalVisits', totalVisits);
+        localStorage.setItem('todayVisits', todayVisits);
+
+        // Tampilkan di layar
+        document.getElementById('count-today').innerText = todayVisits;
+        document.getElementById('count-total').innerText = totalVisits;
+    }
+
+    // FUNGSI HITUNG HARGA
     function hitungTotal() {
         let totalBibit = 0;
         const inputs = document.querySelectorAll('.qty');
 
-        // Hitung total dari semua bibit
         inputs.forEach(input => {
             const hargaPerMl = parseInt(input.getAttribute('data-price'));
             const qty = parseFloat(input.value) || 0;
             const subtotal = hargaPerMl * qty;
-            
             document.getElementById(`sub-${hargaPerMl}`).innerText = "Rp " + subtotal.toLocaleString('id-ID');
             totalBibit += subtotal;
         });
 
-        // Ambil nilai harga botol
         const hargaBotol = parseInt(document.getElementById('harga-botol').value) || 0;
-
-        // Hitung Grand Total
         const grandTotal = totalBibit + hargaBotol;
         document.getElementById('grand-total').innerText = "Rp " + grandTotal.toLocaleString('id-ID');
     }
@@ -117,6 +116,9 @@
         document.getElementById('harga-botol').value = '';
         hitungTotal();
     }
+
+    // Jalankan counter saat halaman dibuka
+    window.onload = updateCounter;
 </script>
 
 </body>
